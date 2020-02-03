@@ -1,0 +1,148 @@
+
+
+
+  /* p{
+      color: rgb(26, 48, 51);
+      margin:  4px 40%;
+      font-size: 20px;
+      border:2px dashed darkblue;
+      width:auto;
+      
+  } */
+
+  p{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+     
+  }
+
+ body {
+    background: #FFFFFF;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .container {
+    background: #fff;
+    border-radius: 8px;
+    margin: 64px auto 0;
+    padding: 24px 0 32px;
+    width: 600px;
+  }
+  
+  .x{
+    border:2px solid rgb(255, 0, 0);
+    background-color: rgba(0, 0, 0, 0.719);
+    color: rgb(38, 214, 191);
+    padding: 9px;
+  }
+
+
+  input {
+    display: none;
+  }
+  
+  .label-button {
+    background: #1e90ff;
+    border-radius: 4px;
+    color: #fff;
+    display: table;
+    margin: 16px auto 0;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+  img {
+      border: 2px solid black;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+    max-height: 350px;
+    border-radius: 10px;
+  }
+
+  .wrap{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  }
+  .wrap1{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  
+  }
+
+  .x1{
+    border:2px solid rgb(255, 0, 0);
+    background-color: rgba(0, 0, 0, 0.719);
+    color: rgb(38, 214, 191);
+    padding: 9px;
+    border-radius: 10px;
+  }
+
+
+
+
+
+
+  /* Below Everything is for Background only */
+body {
+	margin: 0;
+	width: 100%;
+	height: 100vh;
+	font-family: "Exo", sans-serif;
+    color: #fff;
+    background-size: cover;
+
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab );
+	background-size: 400% 400%;
+	-webkit-animation: gradientBG 10s ease infinite;
+            animation: gradientBG 10s ease infinite;
+            
+
+}
+.container {
+	width: 100%;
+	position: absolute;
+	top: 35%;
+	text-align: center;
+}
+h1 {
+	font-weight: 900;
+}
+a {
+	text-decoration: none;
+	color: #212121;
+}
+
+
+
+@-webkit-keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+/* for button */

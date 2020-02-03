@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/contact.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+  <title>Contact Us</title>
+</head>
+
+<body>
+  <section class="navigation">
+    <!-- navbar -->
+    <div class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:black;">
+      <span class="navbar-brand mb-0 "> <img src="/img/logo.png" style="width:20px"></span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#UI-top" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="UI-top">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <div class="container h-100">
+              <div class="d-flex justify-content-center h-100">
+
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Report Crime
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/manualReport">Manual Report</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/Realtimereport">Real Time Report</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/suspect">Report Suspect</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <div class="container" style="margin-top:100px;">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-6 align-self-center">
+        <h1>Want to ask something ?</h1>
+        <h2>Or would you like to suggest us something.....</h2>
+        <br>
+        <h4>
+          Feel free to drop a message to we would love to hear from you.....
+        </h4>
+      </div>
+      <div id="formContainer" class="col-12 col-lg-6 self-align-center">
+        <form id="reportForm" action="/formSubmit" method="post">
+          <h2 style="color:black">Contact Us</h2>
+          <div class="form-row">
+            <div class="col">
+              <label class="form-check-label" for="name">Name</label>
+              <input id="name" class="form-control" type="text" name="name"placeholder="Enter Your Name">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <label class="form-check-label" for="email-id">Email</label>
+              <input id="email" class="form-control" type="email" name="email"placeholder="Enter Your Email">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+              <label for="message">Message</label>
+              <textarea id="message" class="form-control" id="message" class="form-control" cols="5" rows="5"></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-auto form-check">
+              <input type="checkbox" class="form-check-input" id="termsAndCondition">
+              <label for="termsAndCondition" class="form-check-label">You hereby agree with our terms and conditions</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-warning report"name="report">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer font-small unique-color-dark" style="background-color: black;">
+
+  <div style="background-color:darkorange;">
+    <div class="container">
+
+      <!-- Grid row-->
+      <div class="row py-4 d-flex align-items-center">
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+          <h6 class="mb-0" style="color:white">Get connected with us on social networks!</h6>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+          <!-- Facebook -->
+          <a class="fb-ic" style="color:white">
+            <i class="fab fa-facebook-f white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic" style="color:white">
+            <i class="fab fa-twitter white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic" style="color:white">
+            <i class="fab fa-google-plus-g white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic" style="color:white">
+            <i class="fab fa-linkedin-in white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic" style="color:white">
+            <i class="fab fa-instagram white-text"> </i>
+          </a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row-->
+
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left mt-5">
+
+    <!-- Grid row -->
+    <div class="row mt-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+        <!-- Content -->
+        <h6 class="text-uppercase font-weight-bold" style="color:white">Online Crime Report</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p style="color:white">Here you can report for any crime related issue, so that proper actons could be taken against it</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold" style="color:white">Features</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="#!">Security</a>
+        </p>
+        <p>
+          <a href="#!">Privacy</a>
+        </p>
+        <p>
+          <a href="#!">Safe Data Handling</a>
+        </p>
+        <p>
+          <a href="#!">User Friendly</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold" style="color:white">Useful links</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p>
+          <a href="police.gov.in">Police.gov.in</a>
+        </p>
+        <p>
+          <a href="#!">Indian Government</a>
+        </p>
+        <p>
+          <a href="#!">Crime Reporting</a>
+        </p>
+        <p>
+          <a href="#!">About Us</a>
+        </p>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+        <!-- Links -->
+        <h6 class="text-uppercase font-weight-bold" style="color:white">Contact</h6>
+        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+        <p class="text" style="color:white">
+          <i class="fas fa-home mr-3"></i> Lovely Professional University, Jalandhar, Punjab</p>
+        <p class="text" style="color:white">
+          <i class="fas fa-envelope mr-3"></i>DevOfTech.lpu.in@gmail.com</p>
+        <p class="text" style="color:white">
+          <i class="fas fa-phone mr-3"></i>6388406765</p>
+        <p class="text" style="color:white">
+          <i class="fas fa-print mr-3"></i>9984939053</p>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+</footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+          $("#submit").click(function() {
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var message = $("#message").val();
+                // Checking for blank fields.
+                if (name == '' || email == '' || contact == '') {
+                  alert("Please Fill Required Fields");
+                } else {
+                  alert("Your Query Is Recived");
+                };
+              };
+            };
+
+  </script>
+</body>
+
+</html>

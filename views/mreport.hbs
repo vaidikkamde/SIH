@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <script>
+
+   const an=()=>{
+     [].forEach.call(document.querySelectorAll('.any'), function (el) {
+  el.style.visibility = 'hidden';
+
+});
+   }
+const nan=()=>{
+  [].forEach.call(document.querySelectorAll('.any'), function (el) {
+  el.style.visibility = 'visible';
+
+});
+}
+
+
+
+
+
+  </script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/mCstyles.css">
+    <script src="https://kit.fontawesome.com/1781fa9776.js" crossorigin="anonymous"></script>
+    <title>Crime Report Form</title>
+    <style>
+      .foot{
+        background-color: black;
+      }
+      .container2{
+        margin-top:20px;
+            height:1200px;
+      }
+    </style>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
+    <style>
+      body { margin: 0; padding: 0; }
+      #map { position: absolute;z-index: 2; top: 0; bottom: 0; width: 100%; height:500px; margin-top:100px};
+    </style>
+  </head>
+  <body>
+    <section class="navigation">
+      <!-- navbar -->
+      <div class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:black;">
+        <span class="navbar-brand mb-0 "> <img src="/img/logo.png" style="width:20px"></span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#UI-top" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="UI-top">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <div class="container h-100">
+                <div class="d-flex justify-content-center h-100">
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Report Crime
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/manualReport">Manual Report</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/Realtimereport">Real Time Report</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/suspect">Report Suspect</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <div class="container2 ">
+      <div class="row justify-content-center progress-div">
+        <div class="col-10 align-self-start ">
+          <div class="progress">
+            <div class="progress-bar active progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+      </div>
+      <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css"
+    type="text/css"
+/>
+<!-- Promise polyfill script required to use Mapbox GL Geocoder in IE 11 -->
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+<style>
+    #geocoder-container > div {
+        min-width: 50%;
+        margin-left: 25%;
+    }
+    .mapboxgl-ctrl-geocoder--input{
+      border-bottom: 1px solid #4dd0e1;
+        box-shadow: 0 1px 0 0 #4dd0e1;
+        border-radius: 8px;
+    }
+
+    .mapboxgl-ctrl-geocoder--input:focus {
+        border-bottom: 2px solid #4dd0e1;
+}
+</style>
+<div id="map" style="margin-top:120px"></div>
+
+
+
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1IjoiaGFyam90c2NzIiwiYSI6ImNrNHZpYjUzazBqYmgzbnNjMzlwOW1ibnYifQ.T4Nh2LhQ9733LUy7JMh1Vw';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v10',
+        center: [78.9629,20.5937 ],
+        zoom: 4,
+        pitch: 180,
+        bearing: -17.6,
+        antialias: true
+    });
+
+    map.on('load', function() {
+        // Insert the layer beneath any symbol layer.
+        var layers = map.getStyle().layers;
+
+        var labelLayerId;
+        for (var i = 0; i < layers.length; i++) {
+            if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+                labelLayerId = layers[i].id;
+                break;
+            }
+        }
+
+        map.addControl(new mapboxgl.ScaleControl());
+
+        map.addLayer(
+            {
+                'id': '3d-buildings',
+                'source': 'composite',
+                'source-layer': 'building',
+                'filter': ['==', 'extrude', 'true'],
+                'type': 'fill-extrusion',
+                'minzoom': 15,
+                'paint': {
+                    'fill-extrusion-color': '#aaa',
+
+
+                    // use an 'interpolate' expression to add a smooth transition effect to the
+                    // buildings as the user zooms in
+                    'fill-extrusion-height': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        15,
+                        0,
+                        15.05,
+                        ['get', 'height']
+                    ],
+                    'fill-extrusion-base': [
+                        'interpolate',
+                        ['linear'],
+                        ['zoom'],
+                        15,
+                        0,
+                        15.05,
+                        ['get', 'min_height']
+                    ],
+                    'fill-extrusion-opacity': 0.6,
+                }
+            },
+            labelLayerId
+        );
+
+    });
+
+    var geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        marker: {
+            color: 'orange'
+        },
+        mapboxgl: mapboxgl
+    });
+
+   map.addControl(geocoder)
+
+  const x=document.querySelector('.mapboxgl-ctrl-geocoder--input')
+
+   x.addEventListener('focusout',(e)=>{
+        e.preventDefault()
+        var z=x.value
+        const iaddress=document.querySelector('#crimeAddress')
+        iaddress.value=z
+        console.log(z)
+    })
+
+
+
+
+//     var marker = new mapboxgl.Marker()
+//   .setLngLat([30.5, 50.5])
+//   .addTo(map);
+</script>
+
+<div class="row justify-content-center">
+      <div id="formContainer" style="margin-top:500px; width:800px">
+      <form id="mreportForm" action="/formSubmit" method="post">
+      <fieldset>
+
+        <h2>Step:1 Fill up Your Details</h2>
+        <input type="radio" name="cat" id="Non-Anoymous" onclick="nan()" value="Non-Anoymous" checked> Non-Anoymous&nbsp;&nbsp;&nbsp;<input type="radio" name="cat" value="Anonymous" id="Anoymous" onclick="an()" > Anoymous<br>
+          <div class="form-row any">
+            <div class="col-auto">
+
+              <label for="firstName">First Name</label>
+              <input type="text" name="firstname" class="form-control" id="fullName">
+            </div>
+            <div class="col-auto">
+              <label id='ls' for="lasttName">Last Name</label>
+              <input  type="text" name="lastname"class="form-control" id="lastName">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-autod">
+              <label for="email">Email</label>
+              <input type="email" name="email"class="form-control"id="email">
+            </div>
+            <div class="col-auto any">
+              <label for="mobileNumber">Mobile Number</label>
+              <input type="text" name="mobilenumber"class="form-control"  id="mobileNumber">
+            </div>
+          </div>
+          <div class="form-row any">
+            <div class="col">
+              <label for="victimAddress">Residential Address</label>
+              <input type="text" name="address" class="form-control"id="vicimAddress">
+            </div>
+          </div>
+              <button type="button" class="btn btn-primary next"name="next">Next</button>
+      </fieldset>
+      <fieldset>
+        <h2>Step:2 Where and when the crime Occured.</h2>
+          <div class="form-row">
+            <div class="col">
+              <label for="crimeAddress">Location/Address Of Crime Scene</label>
+              <input type="text" class="form-control"name="crimeAddress" id="crimeAddress" value="{{address}}">
+              <p id="geo" style="visibility: hidden;" >hi</p>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-auto">
+              <label for="crimeDate">Date of Crime</label>
+              <input type="date"name="crimedate"class="form-control"id="crimeDate">
+            </div>
+            <div class="col-auto">
+              <label for="crimeTime">Time around which the crime Occured</label>
+              <input type="time" name="crimetime"class="form-control" id="crimeTime">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-auto">
+              <label for="criminalName">Criminal Name (If Known)</label>
+              <input type="text" class="form-control" name="criminalname" id="criminalName">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col">
+            <label for="criminalAddress">Address of Criminal (If Known)</label>
+            <input type="text" class="form-control" name="criminaladdress"id="addresscriminalName">
+            </div>
+          </div>
+          <button type="button" class="btn btn-success previous"name="previous">Previous</button>
+          <button type="button" class="btn btn-primary next"name="next">Next</button>
+      </fieldset>
+      <fieldset>
+        <h2>Step-3 A brief Summary About The Crime</h2>
+          <div class="form-row">
+            <div class="col">
+              <label for="crimeSummary">About The Crime(Detailed summary Please Try to enter specfic information)</label>
+              <textarea id="crimeSummary" name="crimesummary"class="form-control" rows="10"></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-auto">
+              <a href="/sendotp"  class="btn btn-primary" id="sendotp" type="button">Send OTP</a>
+            </div>
+            <div class="col-auto">
+              <input type="text" class="form-control" id="otp" name="otp" value="">
+            </div>
+            <div class="col-auto">
+              <a href="/verify" class="btn btn-primary" id="verify" type="button">Verify</a>
+              <p id='success'></p>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-auto">
+              <p class="ensurePara">We ensure that the data you provided will be secure with us <br> and no information will be made public.</p>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-auto form-check">
+              <input type="checkbox" class="form-check-input" id="termsAndCondition">
+              <label for="termsAndCondition"class="form-check-label">You hereby agree with our terms and conditions</label>
+            </div>
+          </div>
+              <button type="button" class="btn btn-success previous"name="previous">Previous</button>
+              <button type="submit" id='reportbtn' class="btn btn-danger report"name="report">Report Crime</button>
+      </fieldset>
+    </form>
+    </div>
+    </div>
+  </div>
+    </div>
+    <div class="foot">
+    <footer class="page-footer font-small unique-color-dark">
+
+        <div style="background-color: #6351ce;">
+          <div class="container">
+
+            <!-- Grid row-->
+            <div class="row py-4 d-flex align-items-center">
+
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                <h6 class="mb-0" style="color:white">Get connected with us on social networks!</h6>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                <!-- Facebook -->
+                <a class="fb-ic" style="color:white">
+                  <i class="fab fa-facebook-f white-text mr-4"> </i>
+                </a>
+                <!-- Twitter -->
+                <a class="tw-ic" style="color:white">
+                  <i class="fab fa-twitter white-text mr-4"> </i>
+                </a>
+                <!-- Google +-->
+                <a class="gplus-ic" style="color:white">
+                  <i class="fab fa-google-plus-g white-text mr-4"> </i>
+                </a>
+                <!--Linkedin -->
+                <a class="li-ic" style="color:white">
+                  <i class="fab fa-linkedin-in white-text mr-4"> </i>
+                </a>
+                <!--Instagram-->
+                <a class="ins-ic" style="color:white">
+                  <i class="fab fa-instagram white-text"> </i>
+                </a>
+
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+
+          </div>
+        </div>
+
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left mt-5">
+
+          <!-- Grid row -->
+          <div class="row mt-3">
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+              <!-- Content -->
+              <h6 class="text-uppercase font-weight-bold" style="color:white">Online Crime Report</h6>
+              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p style="color:white">Here you can report for any crime related issue, so that proper actons could be taken against it</p>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+              <!-- Links -->
+              <h6 class="text-uppercase font-weight-bold" style="color:white">Features</h6>
+              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                <a href="#!">Security</a>
+              </p>
+              <p>
+                <a href="#!">Privacy</a>
+              </p>
+              <p>
+                <a href="#!">Safe Data Handling</a>
+              </p>
+              <p>
+                <a href="#!">User Friendly</a>
+              </p>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+              <!-- Links -->
+              <h6 class="text-uppercase font-weight-bold" style="color:white">Useful links</h6>
+              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                <a href="#!">Police.gov.in</a>
+              </p>
+              <p>
+                <a href="#!">Indian Government</a>
+              </p>
+              <p>
+                <a href="#!">Crime Reporting</a>
+              </p>
+              <p>
+                <a href="#!">About Us</a>
+              </p>
+
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+              <!-- Links -->
+              <h6 class="text-uppercase font-weight-bold" style="color:white">Contact</h6>
+              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p class="text" style="color:white">
+                <i class="fas fa-home mr-3"></i> Lovely Professional University, Jalandhar, Punjab</p>
+              <p class="text" style="color:white">
+                <i class="fas fa-envelope mr-3"></i>DevOfTech.lpu.in@gmail.com</p>
+              <p class="text" style="color:white">
+                <i class="fas fa-phone mr-3"></i>6388406765</p>
+              <p class="text" style="color:white">
+                <i class="fas fa-print mr-3"></i>9984939053</p>
+
+            </div>
+            <!-- Grid column -->
+
+          </div>
+          <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+      </footer>
+      <!-- Footer -->
+    </footer>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="/js/cj.js" charset="utf-8"></script>
+  </body>
+  <script src="/js/verification.js"></script>
+  
+</html>

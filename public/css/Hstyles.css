@@ -1,0 +1,358 @@
+*{
+padding: 0;
+margin: 0;
+}
+
+body { margin: 0; padding: 0; }
+#map {  top: 0; bottom: 0; width: 100%; height:700px; };
+body {
+    position: relative;
+    margin:0;
+}
+.container-fluid{
+  padding: 0;
+  margin: 0;
+}
+.carousel-inner img {
+  width: 100%;
+  height: 700px;
+}
+.carousel-item img{
+  filter: brightness(50%);
+}
+.carousel-caption{
+  font-size: 45px;
+  position: absolute;
+}
+.carousel-caption h1{
+  text-align: center;
+}
+.ok{
+  margin-left:1rem;
+  padding:70px;
+  text-align:justify;
+}
+#img2{
+  margin-right:10rem;
+}
+#img2{
+  margin-left:5rem;
+}
+#section3{
+  height:800px;
+}
+.ok2{
+  margin-right:5rem;
+  text-align:justify;
+}
+.card{
+  border:none;
+}
+.card img{
+  width:200px;
+  height:200px;
+  margin-left:100px;
+}
+.card-deck{
+  margin-left:5rem;
+  margin-right:5rem;
+}
+.text{
+  color:white;
+}
+.fb-ic{
+  color:white;
+}
+.btn12{
+    background-color:green;
+    border:none;
+    color:white;
+    padding:5px 30px;
+    font-size:14px;
+    text-transform: uppercase;
+    width:300px;
+    height:50px;
+    border-radius:40px;
+}
+  .searchbar{
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 3rem;
+  background-color: #353b48;
+  border-radius: 30px;
+  padding: 10px;
+  }
+
+  .search_input{
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  caret-color:transparent;
+  line-height: 40px;
+  transition: width 0.4s linear;
+  }
+
+  .searchbar:hover > .search_input{
+  padding: 0 10px;
+  width: 450px;
+  caret-color:red;
+  transition: width 0.4s linear;
+  }
+
+  .searchbar:hover > .search_icon{
+  background: white;
+  color: #e74c3c;
+  }
+
+  .search_icon{
+  height: 30px;
+  width: 40px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color:white;
+  text-decoration:none;
+  }
+  body {
+margin-top: 20px;
+}
+/* .container{
+height:1800px;
+} */
+.card {
+border: none;
+}
+
+.card-img {
+border-radius: 0;
+}
+
+.vgr-cards .card {
+display: flex;
+flex-flow: wrap;
+flex: 100%;
+margin-bottom: 40px;
+}
+.vgr-cards .card:nth-child(even) .card-img-body {
+order: 2;
+}
+.vgr-cards .card:nth-child(even) .card-body {
+padding-left: 0;
+padding-right: 1.25rem;
+}
+@media (max-width: 576px) {
+.vgr-cards .card {
+  display: block;
+}
+}
+.vgr-cards .card-img-body {
+flex: 1;
+overflow: hidden;
+position: relative;
+}
+@media (max-width: 576px) {
+.vgr-cards .card-img-body {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 20px;
+}
+}
+.vgr-cards .card-img {
+width: 100%;
+height: auto;
+position: absolute;
+margin-left: 50%;
+-webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+}
+@media (max-width: 1140px) {
+.vgr-cards .card-img {
+  margin: 0;
+  -webkit-transform: none;
+          transform: none;
+  width: 100%;
+  height: auto;
+}
+}
+.vgr-cards .card-body {
+flex: 2;
+padding: 0 0 0 1.25rem;
+}
+@media (max-width: 576px) {
+.vgr-cards .card-body {
+  padding: 0;
+}
+}
+.card{
+height:300px;
+}
+#map{
+border:2px solid #343A40;
+border-radius:20px;
+}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+
+body {
+ background-color: #f2f2f2;
+}
+
+h1 {
+ font-family: 'Montserrat';
+}
+
+.carousel-nav-icon {
+ height: 48px;
+ width: 48px;
+}
+.carousel-item {
+ .col, .col-sm, .col-md {
+    margin: 8px;
+    height: 300px;
+    background-size: cover;
+    background-position: center center;
+ }
+ img {
+    height:500px;
+ }
+}
+#section41{
+height:700px;
+background-color: white;
+}
+#section2{
+background-color: white;
+}
+#logo{
+position: absolute;
+top: 50%;
+left:50%;
+transform: translate(-50%,-50%);
+
+}
+.preload-finish{
+opacity: 0;
+pointer-events: none;
+}
+.preload{
+position: fixed;
+top:0;
+width: 100%;
+height:100vh;
+transition: all 0.5s ease;
+z-index: 1039;
+
+}
+.preloader{
+height: 100vh;
+width:100%;
+background-color:#e8e4c9;
+
+}
+.dot,.sher,.bullEye,.circle,.spokes,.motto{
+stroke: #000;
+stroke-width:1px;
+stroke-dashoffset:0;
+stroke-dasharray:2000;
+}
+.sher{
+animation: sher 5s ease-in-out infinite alternate;
+}
+@keyframes sher {
+0%{
+  fill-opacity:0;
+  stroke-dashoffset:2000;
+}
+100%{
+  stroke-dashoffset:0;
+  fill-opacity:1;
+}
+}
+.dot{
+animation: dot 5s ease-in-out infinite alternate;
+}
+@keyframes dot {
+0%{
+  fill-opacity:0;
+  stroke-dashoffset:2000;
+  }
+100%{
+  fill-opacity:1
+  stroke-dashoffset:0;
+  }
+}
+.bullEye{
+animation: bullEye 5s ease-in-out infinite alternate;
+}
+@keyframes bullEye {
+0%{
+  fill-opacity:0
+  stroke-dashoffset:2000;
+  }
+100%{
+  fill-opacity:1
+  stroke-dashoffset:0;
+  }
+}
+.circle{
+animation: circle 5s ease-in-out infinite alternate;
+}
+@keyframes circle {
+0%{
+  fill-opacity:0
+  stroke-dashoffset:2000;
+  }
+100%{
+  fill-opacity:1
+  stroke-dashoffset:0;
+  }
+}
+.spokes{
+animation: spokes 5s ease-in-out infinite alternate;
+}
+@keyframes spokes {
+0%{
+  fill-opacity:0
+  stroke-dashoffset:2000;
+  }
+100%{
+  fill-opacity:1
+  stroke-dashoffset:0;
+  }
+}
+.motto{
+animation: motto 5s ease-in-out infinite alternate;
+}
+@keyframes motto {
+0%{
+  fill-opacity:0;
+  stroke-dashoffset:2000;
+  }
+100%{
+  fill-opacity:1;
+  stroke-dashoffset:0;
+  }
+
+}
+@media only screen and (max-width:900px){
+svg{
+  width:300px;
+  height:300px;
+}
+.searchbar:hover > .search_input{
+padding: 0 10px;
+width: 12rem;
+caret-color:red;
+transition: width 0.4s linear;
+}
+.carousel{
+  height: 50vh;
+  width: 100%;
+}
+.carousel-inner img{
+  height: 50vh;
+}
+}

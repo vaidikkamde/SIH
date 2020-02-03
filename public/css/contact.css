@@ -1,0 +1,36 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.progress{
+  margin: 1rem;
+  height: 1.5rem;
+}
+
+body{
+  background-color: #3e206d;
+}
+form{
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 2rem;
+  margin: 2rem;
+}
+.btn{
+  margin: 1rem auto;
+}
+.col-auto{
+  margin: 0.25rem;
+}
+.progress{
+  margin-top: 2rem;
+}
+h4,h2,h1{
+  color: white;
+}
+@media (max-width:900px) {
+form{
+  margin: 0.25rem;
+}
+
+}

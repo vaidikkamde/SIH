@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/ns.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Exo&amp;display=swap'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body style="margin: 0;">
+  <p class="x">{{new}}</p>
+  <img src="data:image/png;base64,{{image}}" alt="">
+  <div class="wrap">
+    <p class="x">Following Are Predicted</p>
+  {{#each concepts}}
+  <p class="x">Prediction: {{name}}<br>Probability: {{value}}</p>
+  {{/each}}
+  <a href="/" ><span>Home</span></a>
+  <a href="/home"><button>Upload</button></a>
+  </div>
+</body>
+</html>

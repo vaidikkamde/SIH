@@ -1,0 +1,352 @@
+/* crousel */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  height: 100vh;
+}
+#logo{
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+
+}
+.preload-finish{
+  opacity: 0;
+  pointer-events: none;
+}
+.preload{
+  position: fixed;
+  top:0;
+  width: 100%;
+  height:100vh;
+  transition: all 0.5s ease;
+  z-index: 1031;
+
+}
+.preloader{
+  height: 100vh;
+  width:100%;
+  background-color:#e8e4c9;
+
+}
+.dot,.sher,.bullEye,.circle,.spokes,.motto{
+  stroke: #000;
+  stroke-width:1px;
+  stroke-dashoffset:0;
+  stroke-dasharray:2000;
+}
+.sher{
+  animation: sher 5s ease-in-out infinite alternate;
+}
+@keyframes sher {
+  0%{
+    fill-opacity:0;
+    stroke-dashoffset:2000;
+  }
+  100%{
+    stroke-dashoffset:0;
+    fill-opacity:1;
+  }
+}
+.dot{
+  animation: dot 5s ease-in-out infinite alternate;
+}
+@keyframes dot {
+  0%{
+    fill-opacity:0;
+    stroke-dashoffset:2000;
+    }
+  100%{
+    fill-opacity:1
+    stroke-dashoffset:0;
+    }
+}
+.bullEye{
+  animation: bullEye 5s ease-in-out infinite alternate;
+}
+@keyframes bullEye {
+  0%{
+    fill-opacity:0
+    stroke-dashoffset:2000;
+    }
+  100%{
+    fill-opacity:1
+    stroke-dashoffset:0;
+    }
+}
+.circle{
+  animation: circle 5s ease-in-out infinite alternate;
+}
+@keyframes circle {
+  0%{
+    fill-opacity:0
+    stroke-dashoffset:2000;
+    }
+  100%{
+    fill-opacity:1
+    stroke-dashoffset:0;
+    }
+}
+.spokes{
+  animation: spokes 5s ease-in-out infinite alternate;
+}
+@keyframes spokes {
+  0%{
+    fill-opacity:0
+    stroke-dashoffset:2000;
+    }
+  100%{
+    fill-opacity:1
+    stroke-dashoffset:0;
+    }
+}
+.motto{
+  animation: motto 5s ease-in-out infinite alternate;
+}
+@keyframes motto {
+  0%{
+    fill-opacity:0;
+    stroke-dashoffset:2000;
+    }
+  100%{
+    fill-opacity:1;
+    stroke-dashoffset:0;
+    }
+
+}
+@media only screen and (max-width:900px){
+  svg{
+    width:600px;
+    height:600px;
+  }
+}
+#title,#packages,#contact-us {
+  height: 100vh;
+}
+#features{
+  height:200vh;
+}
+.features-div{
+  margin-top:10vh;
+}
+body{
+  background-color: black;
+}
+.features-div h1{
+  text-align: center;
+  color: black;
+  font-family: 'Playfair Display', serif;
+}
+#title{
+  background-color: #1a3263;
+}
+section{
+  border-radius: 3rem;
+}
+.about-head{
+  margin: 0;
+  padding-top:25vh;
+  text-align: center;
+}
+.about-head h1{
+  font-family: 'Ubuntu', serif;
+  color: #fff;
+  font-size: 3rem;
+}
+.about-head p{
+  padding: 2rem 14rem 2rem 14rem;
+  font-size: 1.5rem;
+}
+
+#package-title{
+  background-color: #022c43;
+  padding-bottom: 3rem;
+}
+/* body */
+body {}
+
+/* default paragraph */
+p {
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  font-weight: bolder;
+  line-height: 2;
+}
+
+/* default h5 */
+h5 {
+  margin-left: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 4vw;
+  padding-top: 3.5rem;
+  font-weight: bold;
+  color: #000;
+}
+
+/* default h3 */
+h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+}
+
+a {
+  color: white;
+}
+
+/* default contanier */
+/* features */
+#features {
+  padding: 7% 15%;
+}
+
+/* navbar */
+
+
+.navbar-brand {
+  font-family: 'Lobster', cursive;
+}
+/* features */
+.feature-box {
+  text-align: center;
+  padding: 10% 5%;
+}
+
+.icon {
+  color: #ffa400;
+  margin-bottom: 1.25rem;
+}
+
+.icon:hover {
+  color: #ff5959;
+}
+
+.back-img {
+  background-color: white;
+}
+
+.feat-head1 {
+  color: #ff0000;
+}
+
+.feat-head1:hover {
+  color: #738598;
+}
+
+.feat-head2 {
+  color: #ff0000;
+}
+
+.feat-head2:hover {
+  color: #738598;
+}
+
+.feat-head3 {
+  color: #ff0000;
+}
+
+.feat-head3:hover {
+  color: #738598;
+}
+.tag-line2 {
+  color: #fff;
+}
+
+.tag-line3 {
+  color: #fff;
+}
+
+.feat-body1 {
+  color: #000;
+}
+
+.feat-body1:hover {
+  color: #738598;
+}
+
+.feat-body2 {
+  color: #000;
+}
+
+.feat-body2:hover {
+  color: #738598;
+}
+
+.feat-body3 {
+  color: #000;
+}
+
+.feat-body3:hover {
+  color: #738598;
+}
+/* coloum */
+.col-lg-12 {
+  padding: 0;
+}
+
+
+
+#packages {
+  background-image: url(https://i.ibb.co/vDy97sY/pexels-photo-860379.jpg);
+}
+
+.price-card {
+  padding-top: 0;
+  padding-bottom: 5%;
+  background-color: #233142;
+  margin-bottom: 1rem;
+}
+
+.price-card:hover {
+  background-color: #141414;
+}
+
+.card-header {
+  background-color: #2f89fc;
+}
+
+/* contact us */
+#contact-us {
+  padding-top: 2%;
+  background-color: #010101;
+  text-align: center;
+}
+
+.add {
+  font-size: 0.65rem;
+}
+
+.address {
+  margin: 0;
+  padding: 0;
+}
+
+.contact {
+  padding: 0;
+  margin: 0;
+}
+
+#packages {
+  padding-bottom: 20%;
+}
+
+#footer {
+  background-color: black;
+  border-radius: 0;
+}
+@media (max-width:900px){
+  .about-head p {
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 1rem;
+  }
+  .about-head{
+    padding-top: 10vh;
+  }
+  #features{
+    height:300vh;
+  }
+}

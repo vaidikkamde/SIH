@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Display buildings in 3D</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; };
+</style>
+</head>
+<body>
+    <div id="map" style="z-index: -1;"></div>
+    <div style="margin-top: 30%;">
+    <div class="container">
+
+  <form action="/action_page.php" id="report" >
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">First Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="check" name="firstname" placeholder="Your name..">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Address</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="iaddress" value= {{address}} name="lastname" placeholder="Your last name.." style="font-size: 20px;" >
+        <p id="geo" style="visibility: hidden;" >hi</p>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+<script src="/js/bodylocation.js"></script>
+</body>
+
+<script src="/js/location.js"></script>     
+</html>

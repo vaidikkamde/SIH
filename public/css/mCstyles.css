@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.progress{
+  margin: 1rem;
+  height: 1.5rem;
+}
+body{
+  background-color: #621055;
+}
+form{
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 2rem;
+  margin: 2rem;
+}
+#mreportForm fieldset:not(:first-of-type){
+  display: none;
+}
+.btn{
+  margin: 1rem auto;
+}
+.col-auto{
+  margin: 0.25rem;
+}
+.progress{
+  margin-top: 2rem;
+}
+.form-mobile{
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
